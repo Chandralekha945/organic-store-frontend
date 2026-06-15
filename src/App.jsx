@@ -14,7 +14,7 @@ import Login from "./pages/Login";
 import Wishlist from "./pages/Wishlist";
 import MyOrders from "./pages/MyOrders";
 
-import OwnerDashboard from "./pages/OwnerDashboard";
+import OwnerDashboard from "./pages/Ownerdashboard";
 
 export default function App() {
   const [page, setPage] = useState("home");
