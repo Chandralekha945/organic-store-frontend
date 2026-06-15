@@ -15,7 +15,7 @@ import rice from "../assets/rice.jpg";
 import arikalu from "../assets/arikalu.jpg";
 import udhalu from "../assets/udhalu.jpg";
 import korralu from "../assets/korralu.jpg";
-import Andu from "../assets/andu.jpg";
+import Andu from "../assets/Andu.jpg";
 import samalu from "../assets/samulu.jpg";
 import tella from "../assets/tellajonna.jpg";
 import pacha from "../assets/pacchajonna.jpg";
