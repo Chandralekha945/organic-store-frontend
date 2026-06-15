@@ -10,7 +10,7 @@ import corn from "../assets/corn.jpg";
 import ragi from "../assets/ragi.jpg";
 import wheat from "../assets/wheat.jpg";
 import ulava from "../assets/ulava.jpg";
-import palm from "../assets/palm.jpg";
+import palm from "../assets/Palm.jpg";
 import rice from "../assets/rice.jpg";
 import arikalu from "../assets/arikalu.jpg";
 import udhalu from "../assets/udhalu.jpg";
