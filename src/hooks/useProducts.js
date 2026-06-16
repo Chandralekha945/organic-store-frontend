@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { PRODUCTS } from "../data/products";
 
-const API_BASE = "http://localhost:8080/api";
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8080/api";
 const DB_ID_OFFSET = 100000; // keeps DB product IDs separate from static ones
 
 export function useAllProducts() {

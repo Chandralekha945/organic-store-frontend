@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API_BASE = "http://localhost:8080/api";
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8080/api";
 
 const STATUS_COLORS = {
   PENDING: { bg: "#fdf1de", fg: "#a8631b" },
