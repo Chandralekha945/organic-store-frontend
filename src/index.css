@@ -1,4 +1,14 @@
-:root {
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+ :root {
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;

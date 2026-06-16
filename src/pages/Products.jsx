@@ -82,7 +82,7 @@ export default function Products({ setPage }) {
           </button>
         </div>
       ) : (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 20 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: 20 }}>
           {filtered.map(p => <ProductCard key={p.id} product={p} setPage={setPage} />)}
         </div>
       )}
