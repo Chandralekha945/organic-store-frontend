@@ -150,7 +150,7 @@ const handlePayment = async () => {
         ))}
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "2rem" }}>
+      <div style={{ display: "grid", gridTemplateColumns: window.innerWidth < 768 ? "1fr" : "1fr 340px", gap: "2rem" }}>
         {/* Form */}
         <div style={{ background: "white", borderRadius: 20, padding: "1.5rem", border: "1px solid #e8f5dc" }}>
           {step === 1 && (
