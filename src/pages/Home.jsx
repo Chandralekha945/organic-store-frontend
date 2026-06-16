@@ -8,8 +8,8 @@ export default function Home({ setPage }) {
   return (
     <div>
       {/* Hero Section */}
-      <section style={{ background: "linear-gradient(135deg, #f0f9e8 0%, #e1f5ce 60%, #d4edbc 100%)", padding: "5rem 1.5rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "center" }}>
+      <section style={{ background: "linear-gradient(135deg, #f0f9e8 0%, #e1f5ce 60%, #d4edbc 100%)", padding: "2rem 1rem" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem", alignItems: "center" }}>
           <div>
             <span style={{ background: "#2d6a0e", color: "white", padding: "4px 14px", borderRadius: 20, fontSize: 13, fontWeight: 600 }}>
               100% Natural & Organic
@@ -37,11 +37,11 @@ export default function Home({ setPage }) {
               ))}
             </div>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ width: 320, height: 320, borderRadius: "50%", background: "radial-gradient(circle, #c8e8a0, #a3d977)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 120, boxShadow: "0 20px 60px rgba(45,106,14,0.3)" }}>
-              🌿
-            </div>
+          <div style={{ display: "flex", justifyContent: "center" }} className="hero-image">
+          <div style={{ width: 280, height: 280, borderRadius: "50%", background: "radial-gradient(circle, #c8e8a0, #a3d977)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 100, boxShadow: "0 20px 60px rgba(45,106,14,0.3)" }}>
+           🌿
           </div>
+        </div>
         </div>
       </section>
 

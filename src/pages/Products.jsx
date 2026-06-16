@@ -23,7 +23,7 @@ export default function Products({ setPage }) {
   if (sortBy === "popular") filtered = [...filtered].sort((a, b) => b.reviews - a.reviews);
 
   return (
-    <div style={{ maxWidth: 1200, margin: "0 auto", padding: "2rem 1.5rem" }}>
+    <div style={{ maxWidth: 1200, margin: "0 auto", padding: "1rem", width: "100%", boxSizing: "border-box" }}>
       {/* Header */}
       <div style={{ marginBottom: "2rem" }}>
         <h1 style={{ fontSize: 32, fontWeight: 900, color: "#1a4008", marginBottom: 6 }}>Our Products</h1>
@@ -42,7 +42,7 @@ export default function Products({ setPage }) {
             style={{ width: "100%", padding: "10px 14px 10px 38px", borderRadius: 10, border: "2px solid #d4edbc", fontSize: 14, outline: "none", boxSizing: "border-box" }}
           />
         </div>
-        <select value={sortBy} onChange={e => setSortBy(e.target.value)} style={{ padding: "10px 14px", borderRadius: 10, border: "2px solid #d4edbc", fontSize: 14, outline: "none", background: "white", minWidth: 160 }}>
+        <select value={sortBy} onChange={e => setSortBy(e.target.value)} style={{ padding: "10px 14px", borderRadius: 10, border: "2px solid #d4edbc", fontSize: 14, outline: "none", background: "white", minWidth: 140, width: "100%" }}>
           <option value="default">Sort: Default</option>
           <option value="price-asc">Price: Low → High</option>
           <option value="price-desc">Price: High → Low</option>
