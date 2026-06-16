@@ -32,7 +32,7 @@ export default function Checkout({ setPage, user }) {
 
 const saveOrderToBackend = async (id) => {
   try {
-    await fetch(`${API_URL}/orders`, {
+    await fetch(`${API_BASE}/orders`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
      body: JSON.stringify({
@@ -116,7 +116,7 @@ const handlePayment = async () => {
           </div>
           <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
             <button onClick={() => setPage("orders")} style={{ background: "#2d6a0e", color: "white", border: "none", padding: "12px 24px", borderRadius: 10, cursor: "pointer", fontWeight: 700 }}>
-              Track Order
+              My Order
             </button>
             <button onClick={() => setPage("home")} style={{ background: "transparent", color: "#2d6a0e", border: "2px solid #2d6a0e", padding: "12px 24px", borderRadius: 10, cursor: "pointer", fontWeight: 600 }}>
               Continue Shopping
