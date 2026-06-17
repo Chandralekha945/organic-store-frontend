@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8080/api";
+const API_URL =
+  import.meta.env.VITE_API_BASE || "https://organic-store-backend.up.railway.app/api";
 
 
 export default function Login({ setUser, setPage }) {
