@@ -93,15 +93,15 @@ export default function Navbar({ page, setPage, user, setUser }) {
     <nav style={{ background: "#2d6a0e", color: "white", padding: "0 1.5rem", position: "sticky", top: 0, zIndex: 100, boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}>
 
       {/* ── Main Row ── */}
-      <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", height: 64, gap: 14 }}>
+      <div style={{ maxWidth: "1400px", margin: "0 auto", display: "flex", alignItems: "center", height: 64, padding: "0 20px"}}>
 
         {/* Logo */}
-        <button onClick={() => go("home")} style={{ background: "none", border: "none", color: "white", cursor: "pointer", fontSize: 16, fontWeight: 800, whiteSpace: "nowrap", flexShrink: 0, padding: 0 }}>
+        <button onClick={() => go("home")} style={{ background: "none", border: "none", color: "white", cursor: "pointer", fontSize: 16, fontWeight: 800, whiteSpace: "nowrap", flexShrink: 0, marginRight: "34px" }}>
           🌿 Aruku Natural Millets
         </button>
 
         {/* Desktop Search */}
-        <div ref={searchRef} className="desktop-search" style={{ position: "relative", flex: 1, maxWidth: 300 }}>
+        <div ref={searchRef} className="desktop-search" style={{ position: "relative", marginRight: "auto", maxWidth: 300 }}>
           <div style={{ display: "flex", alignItems: "center", background: "rgba(255,255,255,0.18)", borderRadius: 10, padding: "7px 12px", gap: 8 }}>
             <span style={{ fontSize: 14, flexShrink: 0 }}>🔍</span>
             <input
@@ -120,7 +120,7 @@ export default function Navbar({ page, setPage, user, setUser }) {
         </div>
 
         {/* Desktop Nav Links */}
-        <div className="desktop-nav" style={{ display: "flex", gap: "0.8rem", alignItems: "center", flexShrink: 0 }}>
+        <div className="desktop-nav" style={{ display: "flex", gap: "20px", alignItems: "center", marginLeft: "auto" }}>
           <button onClick={() => go("home")} style={btnStyle("home")}>Home</button>
           <button onClick={() => go("products")} style={btnStyle("products")}>Products</button>
           <button onClick={() => go("wishlist")} style={{ ...btnStyle("wishlist"), position: "relative" }}>
