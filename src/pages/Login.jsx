@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-const API_URL = "http://localhost:8080/api";
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8080/api";
+
 
 export default function Login({ setUser, setPage }) {
   const [isRegister, setIsRegister] = useState(false);
