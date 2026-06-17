@@ -1,8 +1,21 @@
+import { useState, useEffect } from "react";
 import { useCart } from "../context/CartContext";
 
 export default function Cart({ setPage }) {
   const { cart, updateQty, removeFromCart, cartTotal } = useCart();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  };
+}, []);
   if (cart.length === 0) {
     return (
       <div style={{ maxWidth: 600, margin: "6rem auto", textAlign: "center", padding: "2rem" }}>
@@ -20,21 +33,60 @@ export default function Cart({ setPage }) {
   const total = cartTotal + deliveryFee;
 
   return (
-    <div style={{ maxWidth: 1100, margin: "2rem auto", padding: "0 1.5rem" }}>
-      <h1 style={{ fontSize: 32, fontWeight: 900, color: "#1a4008", marginBottom: "1.5rem" }}>
+    <div
+        style={{
+        maxWidth: 1100,
+        margin: "2rem auto",
+        padding: isMobile ? "0 1rem" : "0 1.5rem",
+       }}
+        >
+      <h1
+       style={{
+       fontSize: isMobile ? 24 : 32,
+       fontWeight: 900,
+       color: "#1a4008",
+        marginBottom: "1.5rem",
+      }}
+       >
         🛒 Your Cart <span style={{ fontSize: 18, color: "#888", fontWeight: 400 }}>({cart.length} items)</span>
       </h1>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 360px", gap: "2rem" }}>
+      <div
+        style={{
+        display: "grid",
+        gridTemplateColumns: isMobile ? "1fr" : "1fr 360px",
+       gap: "2rem"
+       }}
+       >
         {/* Cart Items */}
         <div>
           {cart.map(item => (
-            <div key={item.id} style={{ background: "white", borderRadius: 16, padding: "1.25rem", marginBottom: 12, border: "1px solid #e8f5dc", display: "flex", gap: "1rem", alignItems: "center" }}>
-              <img src={item.image} alt={item.name} style={{ width: 90, height: 90, borderRadius: 12, objectFit: "cover", flexShrink: 0 }} />
+            <div key={item.id} 
+            style={{
+             background: "white",
+             borderRadius: 16,
+             padding: "1rem",
+             marginBottom: 12,
+             border: "1px solid #e8f5dc",
+             display: "flex",
+             flexDirection: isMobile ? "column" : "row",
+             gap: "1rem",
+            alignItems: isMobile ? "stretch" : "center"
+           }}
+          >
+              <img src={item.image} alt={item.name} style={{ width: isMobile ? "100%" : 90, height: isMobile ? 200 : 90,maxHeight:200, borderRadius: 12, objectFit: "cover", flexShrink: 0 }} />
               <div style={{ flex: 1 }}>
                 <h3 style={{ color: "#1a4008", fontWeight: 700, margin: "0 0 4px", fontSize: 16 }}>{item.name}</h3>
                 <p style={{ color: "#888", fontSize: 13, margin: "0 0 8px" }}>{item.category} • {item.unit}</p>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
+                <div
+              style={{
+               display: "flex",
+                flexDirection: isMobile ? "column" : "row",
+                alignItems: isMobile ? "stretch" : "center",
+                justifyContent: "space-between",
+                 gap: 10,
+                }}
+                 >
                   {/* Qty Controls */}
                   <div style={{ display: "flex", alignItems: "center", border: "2px solid #d4edbc", borderRadius: 8, overflow: "hidden" }}>
                     <button onClick={() => updateQty(item.id, item.qty - 1)} style={{ background: "#f0f9e8", border: "none", width: 32, height: 32, fontSize: 16, cursor: "pointer" }}>-</button>
@@ -52,7 +104,13 @@ export default function Cart({ setPage }) {
         </div>
 
         {/* Order Summary */}
-        <div style={{ position: "sticky", top: 80, height: "fit-content" }}>
+        <div
+  style={{
+    position: isMobile ? "static" : "sticky",
+    top: 80,
+    height: "fit-content"
+  }}
+>
           <div style={{ background: "white", borderRadius: 20, padding: "1.5rem", border: "1px solid #e8f5dc" }}>
             <h2 style={{ color: "#1a4008", fontWeight: 800, marginBottom: "1.5rem", fontSize: 20 }}>Order Summary</h2>
             <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: "1.5rem" }}>
